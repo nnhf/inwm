@@ -24,7 +24,7 @@ class WindowManager {
     /* 
      * Xlib error handler.
      */
-    static int OnXError(Display* dpy, XErrorEvent)
+    static int OnXError(Display* dpy, XErrorEvent);
 
   private:
     /*
