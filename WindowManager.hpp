@@ -2,40 +2,40 @@
 #define WM_HPP
 
 extern "C" {
-	#include <X11/Xlib.h>
+  #include <X11/Xlib.h>
 }
 #include <memory>
 
 class WindowManager {
-	public:
-		/*
+  public:
+    /*
      * Factory method for establishing a connection to an X server and creating
      * a Window Manager instance.
      */
-		static std::unique_ptr<WindowManager> Create();
+    static std::unique_ptr<WindowManager> Create();
 
-		/*
+    /*
      * Disconnect from the X server.
-		 */
-		~WindowManager();
+     */
+    ~WindowManager();
 
-		void Run();
+    void Run();
 
-		/* 
-		 * Xlib error handler.
-		 */
-		static int OnXError(Display* dpy, XErrorEvent)
+    /* 
+     * Xlib error handler.
+     */
+    static int OnXError(Display* dpy, XErrorEvent)
 
-	private:
-		/*
+  private:
+    /*
      * Invoke internally by Create()
      */
-		WindowManager(Display* dpy);
+    WindowManager(Display* dpy);
 
     /*
      * Handle to the underlying Xlib Display struct.
      */
-		Display* _dpy;
+    Display* _dpy;
 
     /*
      * Handle to root window.
