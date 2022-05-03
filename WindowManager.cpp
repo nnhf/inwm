@@ -38,3 +38,14 @@ void WindowManager::Run() {
   
 
 }
+
+int WindowManager::OnWMDetected(Display* display, XErrorEvent* e) {
+  CHECK_EQ(static_cast<int>(e->error_code), BadAccess);
+  wm_detected_ = true;
+
+  return 0;
+}
+
+int WindowManager::OnXError(Display* display, XErrorEvent* e) {
+  // printf(e->) TODO: xixixi
+}
