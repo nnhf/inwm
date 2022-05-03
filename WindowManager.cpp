@@ -39,13 +39,16 @@ void WindowManager::Run() {
 
 }
 
-int WindowManager::OnWMDetected(Display* display, XErrorEvent* e) {
-  CHECK_EQ(static_cast<int>(e->error_code), BadAccess);
-  wm_detected_ = true;
+int WindowManager::OnWMDetected(Display* dpy, XErrorEvent* e) {
+  // if (static_cast<int>(e->error_code) == BadAccess) {
+  //   wm_detected_ = true;
+  // }
 
   return 0;
 }
 
-int WindowManager::OnXError(Display* display, XErrorEvent* e) {
+int WindowManager::OnXError(Display* dpy, XErrorEvent* e) {
   // printf(e->) TODO: xixixi
+
+  return 0;
 }

@@ -21,9 +21,6 @@ class WindowManager {
 
     void Run();
 
-    static int OnXError(Display* dpy, XErrorEvent* e);
-    static int OnWMDetected(Display* dpy, XErrorEvent* e);
-
   private:
     /*
      * Invoke internally by Create()
@@ -39,6 +36,10 @@ class WindowManager {
      * Handle to root window.
      */
     const Window _root;
+
+    static int OnXError(Display* dpy, XErrorEvent* e);
+    static int OnWMDetected(Display* dpy, XErrorEvent* e);
+    static bool wm_detected_;
 };
 
 #endif
