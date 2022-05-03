@@ -1,6 +1,6 @@
 #ifndef LOGGING_HPP
 #define LOGGING_HPP
 
-// add something here
+// test, add something here
 
 #endif
