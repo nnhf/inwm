@@ -1,9 +1,9 @@
-objects := $(wildcard *.o)
+objects := $(patsubst %.cpp,%.o,$(wildcard *.cpp))
 
 %.o: %.cpp
 	g++ -c $< -o $@
 
-all: ${objects}
+all: $(objects)
 	g++ -o wm $^ -lX11
 
 clean:
