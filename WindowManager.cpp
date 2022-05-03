@@ -1,4 +1,4 @@
-#include "wm.hpp"
+#include "WindowManager.hpp"
 #include <cstdio>
 using std::unique_ptr;
 

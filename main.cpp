@@ -1,6 +1,6 @@
 #include <cstdio>
 #include <cstdlib>
-#include "Logging.hpp"
+// #include "Logging.hpp"
 #include "WindowManager.hpp"
 
 using std::unique_ptr;
